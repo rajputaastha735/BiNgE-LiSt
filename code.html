@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary": "#342588",
+                    "surface-variant": "#e5e1ea",
+                    "secondary-container": "#dfdfe1",
+                    "on-secondary-container": "#616365",
+                    "surface-dim": "#ddd8e1",
+                    "on-tertiary-container": "#fbb06a",
+                    "outline-variant": "#c9c4d4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#454749",
+                    "surface-container-high": "#ebe6ef",
+                    "outline": "#787583",
+                    "surface-tint": "#5c50b2",
+                    "tertiary-fixed": "#ffdcc0",
+                    "inverse-surface": "#312f36",
+                    "tertiary": "#552d00",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#764100",
+                    "background": "#fcf8ff",
+                    "primary-fixed": "#e4dfff",
+                    "surface-bright": "#fcf8ff",
+                    "primary-fixed-dim": "#c7bfff",
+                    "inverse-primary": "#c7bfff",
+                    "surface-container-highest": "#e5e1ea",
+                    "secondary-fixed": "#e2e2e4",
+                    "on-tertiary-fixed": "#2d1600",
+                    "on-background": "#1c1b21",
+                    "on-primary-container": "#bfb7ff",
+                    "on-surface": "#1c1b21",
+                    "secondary": "#5d5e60",
+                    "inverse-on-surface": "#f4eff8",
+                    "on-surface-variant": "#474552",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "tertiary-fixed-dim": "#ffb876",
+                    "surface-container": "#f1ecf5",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f6f2fb",
+                    "on-primary-fixed": "#170065",
+                    "on-tertiary-fixed-variant": "#6b3b00",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#443798",
+                    "surface": "#fcf8ff",
+                    "primary-container": "#4b3fa0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-vertical": "12px",
+                    "inline-horizontal": "16px",
+                    "inset-bubble": "12px 16px",
+                    "margin-screen": "16px",
+                    "gutter-md": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fcf8ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e5e1ea;
+            border-radius: 10px;
+        }
+    </style>
+    <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar Section -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-screen h-16 max-w-[600px] mx-auto">
+<div class="flex items-center gap-2 font-headline-lg text-headline-lg text-primary">
+<span class="material-symbols-outlined text-primary" data-icon="movie_edit">movie_edit</span>
+<span>BiNgE LiSt</span>
+</div>
+<div class="flex items-center">
+<button class="w-11 h-11 flex items-center justify-center hover:bg-surface-variant/50 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-16 pb-24 min-h-screen flex flex-col max-w-[600px] mx-auto w-full">
+<!-- Empty State Container -->
+<div id="empty-state" class="flex-1 flex flex-col items-center justify-center px-margin-screen text-center">
+<div class="mb-6 w-20 h-20 bg-primary-container/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[48px]" data-icon="movie_filter">movie_filter</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-8">How can I help you today?</h1>
+<!-- Suggestion Chips Grid -->
+<div class="grid grid-cols-1 gap-3 w-full max-w-[400px]">
+<button class="flex items-center justify-between text-left px-4 py-3 border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors active:scale-[0.98] duration-150">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recommend anime like Attack on Titan</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between text-left px-4 py-3 border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors active:scale-[0.98] duration-150">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Explain the ending of Inception</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between text-left px-4 py-3 border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors active:scale-[0.98] duration-150">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Is Death Note okay for kids?</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between text-left px-4 py-3 border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors active:scale-[0.98] duration-150">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Where can I watch Jujutsu Kaisen?</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Chat area scrollable if content exists -->
+<div id="chat-area" class="hidden px-margin-screen flex flex-col gap-stack-vertical py-6 w-full flex-1 mb-24 overflow-y-auto custom-scrollbar">
+</div>
+</main>
+<!-- Input Bar Section -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] z-50 px-margin-screen pb-6">
+<div class="bg-surface shadow-lg rounded-[24px] flex items-center p-2 gap-2 h-14 border border-outline-variant/30">
+<button id="attach-button" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+</button>
+<input type="file" id="file-input" class="hidden" accept="image/*">
+<input id="message-input" class="flex-1 bg-transparent border-none focus:ring-0 font-body-lg text-body-lg text-on-surface px-2" placeholder="Type a message..." type="text"/>
+<button id="send-button" disabled class="w-11 h-11 flex items-center justify-center bg-primary-container text-on-primary-container rounded-full opacity-[0.38] cursor-not-allowed transition-all">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar Section (Suppressing if task focus is purely chat entry, but mapping based on JSON logic) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] flex justify-around items-center px-inline-horizontal py-2 bg-surface shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-40 hidden md:flex">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full p-3 active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:bg-surface-container-high transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:bg-surface-container-high transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+</nav>
+<script>
+    window.onerror = function(message, source, lineno, colno, error) {
+        alert("JS Error: " + message + " at line " + lineno);
+    };
+    const emptyState = document.getElementById('empty-state');
+    const chatArea = document.getElementById('chat-area');
+    const messageInput = document.getElementById('message-input');
+    const sendButton = document.getElementById('send-button');
+    const attachButton = document.getElementById('attach-button');
+    const fileInput = document.getElementById('file-input');
+    
+    let conversationHistory = [];
+    
+    // Configure marked
+    if (typeof marked !== 'undefined' && marked.use) {
+        marked.use({
+            breaks: true
+        });
+    } else if (typeof marked !== 'undefined' && marked.setOptions) {
+        marked.setOptions({
+            breaks: true
+        });
+    }
+
+    // Handle input empty state guard
+    messageInput.addEventListener('input', () => {
+        const text = messageInput.value.trim();
+        if (text === '') {
+            sendButton.disabled = true;
+            sendButton.classList.add('opacity-[0.38]', 'cursor-not-allowed');
+        } else {
+            sendButton.disabled = false;
+            sendButton.classList.remove('opacity-[0.38]', 'cursor-not-allowed');
+        }
+    });
+
+    // Handle suggestion chips
+    document.querySelectorAll('#empty-state .grid button').forEach(button => {
+        button.addEventListener('click', () => {
+            const text = button.querySelector('span.font-body-sm').innerText;
+            messageInput.value = text;
+            sendMessage(text);
+        });
+    });
+
+    // Handle enter key
+    messageInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !sendButton.disabled) {
+            e.preventDefault();
+            sendMessage(messageInput.value.trim());
+        }
+    });
+
+    // Handle send click
+    sendButton.addEventListener('click', () => {
+        if (!sendButton.disabled) {
+            sendMessage(messageInput.value.trim());
+        }
+    });
+
+    // Handle attach file
+    attachButton.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (file) {
+            sendImage(file, messageInput.value.trim());
+        }
+    });
+
+    function showChatArea() {
+        emptyState.style.display = 'none';
+        chatArea.classList.remove('hidden');
+        chatArea.style.display = 'flex';
+    }
+
+    function appendUserMessage(text) {
+        showChatArea();
+        const bubble = document.createElement('div');
+        bubble.className = "flex flex-col items-end max-w-[85%] self-end w-full";
+        bubble.innerHTML = `
+            <div class="bg-primary-container text-white p-inset-bubble rounded-[16px] shadow-sm elevation-2dp font-body-lg text-body-lg text-wrap break-words overflow-hidden">
+                ${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}
+            </div>
+        `;
+        chatArea.appendChild(bubble);
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+    
+    function appendAssistantMessage(html, isError = false) {
+        showChatArea();
+        const bubble = document.createElement('div');
+        bubble.className = "flex flex-col items-start max-w-[85%] w-full";
+        
+        const bgColor = isError ? "bg-error-container text-on-error-container" : "bg-[#F5F5F7] text-on-surface";
+        
+        // Ensure proper markdown list formatting with tailwind classes
+        const styledHtml = html.replace(/<ul>/g, '<ul class="list-disc ml-4">').replace(/<ol>/g, '<ol class="list-decimal ml-4">');
+        
+        bubble.innerHTML = `
+            <div class="${bgColor} p-inset-bubble rounded-[16px] shadow-sm elevation-2dp font-body-lg text-body-lg w-full text-wrap break-words overflow-hidden">
+                ${styledHtml}
+            </div>
+        `;
+        chatArea.appendChild(bubble);
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function appendTypingIndicator() {
+        showChatArea();
+        const bubble = document.createElement('div');
+        bubble.id = "typing-indicator";
+        bubble.className = "flex flex-col items-start max-w-[85%]";
+        bubble.innerHTML = `
+            <div class="bg-[#F5F5F7] text-on-surface p-inset-bubble rounded-[16px] shadow-sm elevation-2dp font-body-lg text-body-lg flex gap-1 items-center h-10">
+                <div class="w-2 h-2 bg-on-surface-variant rounded-full animate-bounce"></div>
+                <div class="w-2 h-2 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                <div class="w-2 h-2 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+            </div>
+        `;
+        chatArea.appendChild(bubble);
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function removeTypingIndicator() {
+        const indicator = document.getElementById('typing-indicator');
+        if (indicator) {
+            indicator.remove();
+        }
+    }
+
+    async function sendImage(file, text) {
+        messageInput.value = '';
+        sendButton.disabled = true;
+        sendButton.classList.add('opacity-[0.38]', 'cursor-not-allowed');
+        
+        appendUserMessage(text ? `[Image uploaded] ${text}` : `[Image uploaded]`);
+        appendTypingIndicator();
+        
+        const formData = new FormData();
+        formData.append('file', file);
+        if (text) {
+            formData.append('message', text);
+        }
+
+        try {
+            const response = await fetch('/vision', {
+                method: 'POST',
+                body: formData
+            });
+            
+            removeTypingIndicator();
+            const data = await response.json();
+            
+            if (response.ok) {
+                const parsedHtml = marked.parse(data.reply);
+                appendAssistantMessage(parsedHtml);
+            } else {
+                handleError(response.status, data.detail);
+            }
+        } catch (error) {
+            removeTypingIndicator();
+            handleError(500, "Something went wrong on my end. Please retry.");
+        }
+        
+        fileInput.value = '';
+    }
+
+    async function sendMessage(text) {
+        if (!text) return;
+        
+        messageInput.value = '';
+        sendButton.disabled = true;
+        sendButton.classList.add('opacity-[0.38]', 'cursor-not-allowed');
+        
+        appendUserMessage(text);
+        
+        const requestHistory = [...conversationHistory];
+        
+        // Push user message to history
+        conversationHistory.push({ role: "user", parts: [{ text: text }] });
+        
+        await callChatEndpoint(text, requestHistory, 0);
+    }
+    
+    async function callChatEndpoint(text, requestHistory, retryCount) {
+        appendTypingIndicator();
+        
+        try {
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: text, history: requestHistory })
+            });
+            
+            removeTypingIndicator();
+            const data = await response.json();
+            
+            if (response.ok) {
+                const parsedHtml = marked.parse(data.reply);
+                appendAssistantMessage(parsedHtml);
+                conversationHistory.push({ role: "model", parts: [{ text: data.reply }] });
+            } else if (response.status === 429 && retryCount === 0) {
+                // Retry logic for 429
+                setTimeout(() => {
+                    callChatEndpoint(text, requestHistory, 1);
+                }, 2000);
+            } else {
+                handleError(response.status, data.detail);
+                // remove the user message from history if it failed
+                conversationHistory.pop();
+            }
+        } catch (error) {
+            removeTypingIndicator();
+            handleError(500, "Something went wrong on my end. Please retry.");
+            conversationHistory.pop();
+        }
+    }
+    
+    function handleError(status, detail) {
+        let msg = "Something went wrong on my end. Please retry.";
+        if (status === 429) {
+            msg = "I'm a bit busy right now — please try again in a moment.";
+        } else if (status === 403) {
+            msg = detail || "API error. Check your API key and project permissions.";
+        } else if (detail) {
+            msg = detail;
+        }
+        appendAssistantMessage(msg, true);
+    }
+</script>
+</body></html>
